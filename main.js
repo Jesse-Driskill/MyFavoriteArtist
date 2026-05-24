@@ -703,14 +703,16 @@ function initBiographySection() {
   const music = document.querySelector(".music-view");
   const gallery = document.querySelector(".gallery-view");
   const sections = [...document.querySelectorAll(".biography-section")];
+  const bioImages = [...document.querySelectorAll(".biography-image")];
 
   if (!trigger || !biography) {
     return;
   }
 
-  sections.forEach((section) => {
+  sections.forEach((section, sectionIndex) => {
     const button = section.querySelector(".biography-play");
     const text = section.querySelector(".biography-text");
+    const pairedImage = bioImages[sectionIndex];
 
     if (!button || !text) {
       return;
@@ -727,6 +729,7 @@ function initBiographySection() {
       run += 1;
       section.classList.remove("is-playing");
       section.classList.add("is-hiding");
+      pairedImage?.classList.remove("is-visible");
       button.setAttribute("aria-label", `Play ${title} text`);
       window.setTimeout(() => {
         if (!section.classList.contains("is-hiding")) {
@@ -746,6 +749,7 @@ function initBiographySection() {
       text.textContent = "";
       section.classList.remove("is-hiding");
       section.classList.add("is-playing");
+      pairedImage?.classList.add("is-visible");
       button.setAttribute("aria-label", `Stop ${title} text`);
 
       if (prefersReducedMotion) {
