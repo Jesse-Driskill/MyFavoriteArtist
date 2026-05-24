@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Placeholder Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="custom-cursor" aria-hidden="true"></div>
+  <div class="visualizer-dock">
+    <div id="spectroVisualizer" class="visualizer-panel">
+      <div class="visualizer-actions">
+        <button
+          type="button"
+          id="expandVisualizer"
+          class="visualizer-toggle"
+          aria-label="Expand visualizer"
+          aria-expanded="false"
+          title="Expand visualizer"
+        >+</button>
+        <button
+          type="button"
+          id="pauseDemo"
+          class="visualizer-toggle"
+          aria-label="Play demo track"
+          title="Play demo track"
+        >></button>
+      </div>
+    </div>
+  </div>
+  <nav class="side-nav" aria-label="Primary navigation">
+    <button type="button" class="nav-logo" data-home-trigger aria-label="Return to main page">
+      <img src="assets/3die.png" alt="Three die">
+      <img class="tilted-die" src="assets/5die.png" alt="Five die">
+    </button>
+    <h1 data-home-trigger>Sample Text</h1>
+    <button type="button" class="nav-menu-toggle" aria-label="Open menu" aria-expanded="false"></button>
+    <div class="nav-menu" id="primaryMenu">
+      <a href="#music" data-music-trigger>Music</a>
+      <a href="#gallery" data-gallery-trigger>Gallery</a>
+      <a href="#biography" data-biography-trigger>Biography</a>
+    </div>
+  </nav>
+  <main>
+    <p class="typewriter">
+      This is descriptive placeholder text for a bold, minimal page. Replace it
+      with a short introduction, product statement, or atmospheric message.
+    </p>
+    <div class="controls" aria-label="Audio visualizer controls">
+      <button type="button" id="micButton">Use Microphone</button>
+      <button type="button" id="demoButton">Play Demo</button>
+    </div>
+  </main>
+  <section id="music" class="music-view" aria-label="Music" aria-hidden="true">
+    <article class="music-track">
+      <div class="music-title-row">
+        <button type="button" class="music-carousel-arrow" data-track-direction="-1" aria-label="Previous track">←</button>
+        <h2 class="track-swap-target">Faneto</h2>
+        <button type="button" class="music-carousel-arrow" data-track-direction="1" aria-label="Next track">→</button>
+      </div>
+      <div class="music-track-frame">
+        <div class="music-track-content track-swap-target">
+          <img src="assets/chiefkeef.webp" alt="Faneto cover">
+        </div>
+      </div>
+      <div class="track-player track-player-desktop">
+        <button type="button" class="track-play track-play-desktop" aria-label="Play Faneto">PLAY</button>
+        <button type="button" class="track-progress" aria-label="Seek Faneto" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <span class="track-progress-fill"></span>
+        </button>
+        <span class="track-time">0:00 / 0:00</span>
+      </div>
+      <audio class="music-audio" src="assets/Chief Keef - Faneto [Official Audio].mp3" preload="metadata"></audio>
+    </article>
+    <div class="music-visualizer-wrap">
+      <div class="music-visualizer" aria-hidden="true"></div>
+      <div class="track-player track-player-mobile">
+        <button type="button" class="track-progress" aria-label="Seek Faneto" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <span class="track-progress-fill"></span>
+        </button>
+        <span class="track-time">0:00 / 0:00</span>
+      </div>
+      <div class="mobile-track-controls">
+        <button type="button" class="music-carousel-arrow" data-track-direction="-1" aria-label="Previous track">←</button>
+        <button type="button" class="track-play track-play-mobile" aria-label="Play Faneto">PLAY</button>
+        <button type="button" class="music-carousel-arrow" data-track-direction="1" aria-label="Next track">→</button>
+      </div>
+    </div>
+  </section>
+  <section id="biography" class="biography-view" aria-label="Biography" aria-hidden="true">
+    <article class="biography-section">
+      <h2>
+        <button type="button" class="biography-play" aria-label="Play Origin text"></button>
+        <span>Origin</span>
+      </h2>
+      <p class="biography-text">
+        Placeholder biography text introduces the earliest chapter in a spare,
+        direct voice. It can describe a place, a formative habit, or the first
+        thread of the work.
+      </p>
+    </article>
+    <article class="biography-section">
+      <h2>
+        <button type="button" class="biography-play" aria-label="Play Practice text"></button>
+        <span>Practice</span>
+      </h2>
+      <p class="biography-text">
+        Placeholder biography text outlines the process behind the current
+        material. It leaves room for collaborators, recurring methods, and
+        the atmosphere around the work.
+      </p>
+    </article>
+    <article class="biography-section">
+      <h2>
+        <button type="button" class="biography-play" aria-label="Play Present text"></button>
+        <span>Present</span>
+      </h2>
+      <p class="biography-text">
+        Placeholder biography text describes what is active now. It can hold
+        recent releases, ongoing experiments, or a short statement of intent.
+      </p>
+    </article>
+  </section>
+  <section id="gallery" class="gallery-view" aria-label="Image gallery" aria-hidden="true">
+    <div class="gallery-stage">
+      <img
+        class="gallery-image is-visible"
+        src="assets/goose.jpeg"
+        alt="Gallery selection"
+      >
+      <p class="gallery-caption" aria-live="polite"></p>
+      <div class="gallery-mobile-nav" aria-label="Mobile gallery navigation">
+        <button type="button" class="gallery-mobile-arrow" data-gallery-mobile-direction="-1" aria-label="Previous animal">←</button>
+        <span class="gallery-mobile-name">Goose</span>
+        <button type="button" class="gallery-mobile-arrow" data-gallery-mobile-direction="1" aria-label="Next animal">→</button>
+      </div>
+    </div>
+    <nav class="gallery-list" aria-label="Gallery image choices">
+      <a href="assets/goose.jpeg" data-gallery-image="assets/goose.jpeg" data-gallery-info="Geese are social waterbirds that often travel in loud, organized flocks. Many species form long-term pairs and navigate huge seasonal migrations with striking precision.">Goose</a>
+      <a href="assets/leopard.jpg" data-gallery-image="assets/leopard.jpg" data-gallery-info="Leopards are powerful solitary cats known for their spotted coats and quiet movement. They are adaptable hunters and often carry prey into trees to keep it safe.">Leopard</a>
+      <a href="assets/otter.jpg" data-gallery-image="assets/otter.jpg" data-gallery-info="Otters are playful semi-aquatic mammals with dense fur that traps warmth in cold water. They use sensitive whiskers to find fish, shellfish, and other small prey.">Otter</a>
+      <a href="assets/finch.jpg" data-gallery-image="assets/finch.jpg" data-gallery-info="Finches are small songbirds with beaks shaped by the foods they eat. Their varied calls, colors, and feeding habits make them a classic example of adaptation.">Finch</a>
+      <a href="assets/marmot.jpg" data-gallery-image="assets/marmot.jpg" data-gallery-info="Marmots are sturdy ground squirrels that live in burrows across mountain and grassland habitats. They spend warm months feeding heavily before settling into long winter hibernation.">Marmot</a>
+      <a href="assets/ibex.jpeg" data-gallery-image="assets/ibex.jpeg" data-gallery-info="Ibex are wild goats built for steep cliffs and rocky terrain. Their curved horns and precise footing help them move through places few predators can follow.">Ibex</a>
+      <a href="assets/badger.png" data-gallery-image="assets/badger.png" data-gallery-info="Badgers are strong diggers with compact bodies and long claws. They build complex underground homes and usually forage at night for insects, roots, and small animals.">Badger</a>
+      <a href="assets/tapir.jpg" data-gallery-image="assets/tapir.jpg" data-gallery-info="Tapirs are shy forest mammals with flexible snouts used to grab leaves and fruit. They are strong swimmers and play an important role in spreading seeds.">Tapir</a>
+      <a href="assets/heron.jpg" data-gallery-image="assets/heron.jpg" data-gallery-info="Herons are patient wading birds that hunt by standing still and striking quickly. Their long legs and spear-like bills are perfectly suited for shallow water.">Heron</a>
+      <a href="assets/lemur.jpg" data-gallery-image="assets/lemur.jpg" data-gallery-info="Lemurs are primates found naturally only on Madagascar. They rely on scent, calls, and expressive movement to communicate through forest canopies.">Lemur</a>
+      <a href="assets/pika.jpg" data-gallery-image="assets/pika.jpg" data-gallery-info="Pikas are small mountain mammals related to rabbits. They gather piles of plants in summer, storing food for harsh alpine winters.">Pika</a>
+      <a href="assets/ocelot.jpg" data-gallery-image="assets/ocelot.jpg" data-gallery-info="Ocelots are nocturnal spotted cats found in forests and scrublands of the Americas. Their patterned coats help them disappear into dappled shade while hunting.">Ocelot</a>
+    </nav>
+  </section>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
