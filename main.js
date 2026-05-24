@@ -602,7 +602,7 @@ async function initMusicSection() {
 
       if (isCenterBassBar) {
         pinkUntilHeights[index] = 0;
-      } else if (heightJump > 0.16) {
+      } else if (heightJump > 0.14) {
         pinkUntilHeights[index] = halfHeight * 0.86;
       } else if (halfHeight < pinkUntilHeights[index]) {
         pinkUntilHeights[index] = 0;
